@@ -1,0 +1,8 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/composer-php73', '.']
+- name: "gcr.io/${PROJECT_ID}/composer-php73"
+  args: ["--help"]
+
+images: ['gcr.io/$PROJECT_ID/composer-php73']
+tags: ['cloud-builders-local']
